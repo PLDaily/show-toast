@@ -1,7 +1,6 @@
 /**
  * Copyright (c) 2017 PLDaily
  * License: MIT
- * Version: 1.0.0
  * https://github.com/PLDaily/showToast
 **/
 
