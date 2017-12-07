@@ -20,7 +20,10 @@ npm install show-toast
 ### Import show-toast
 
 **Import using module**
+
+
 ES6/commonjs import style is supported.
+
 
 ```js
 // ES6
@@ -30,7 +33,10 @@ import showToast from 'show-toast';
 var showToast = require("show-toast");
 ```
 **Import using module**
+
+
 link as a `script` in an html file and access global variable `showToast`.
+
 
 ```js
 <script src="dist/show-toast.js"></script>
