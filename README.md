@@ -1,10 +1,10 @@
 # show-toast
 
 [![Build Status](https://travis-ci.org/PLDaily/show-toast.svg?branch=master)](https://travis-ci.org/PLDaily/show-toast)
-[![npm](https://img.shields.io/npm/v/show-toast.svg?style=flat-square)](https://www.npmjs.com/package/show-toast)
-[![npm](https://img.shields.io/npm/dt/show-toast.svg?style=flat-square)](https://www.npmjs.com/package/show-toast)
-[![npm](https://img.shields.io/npm/l/show-toast.svg?style=flat-square)](https://www.npmjs.com/package/show-toast)
-[![npm](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://github.com/standard/standard)
+[![npm](https://img.shields.io/npm/v/show-toast.svg?style=plastic)](https://www.npmjs.com/package/show-toast)
+[![npm](https://img.shields.io/npm/dt/show-toast.svg?style=plastic)](https://www.npmjs.com/package/show-toast)
+[![npm](https://img.shields.io/npm/l/show-toast.svg?style=plastic)](https://www.npmjs.com/package/show-toast)
+[![npm](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=plastic)](https://github.com/standard/standard)
 
 ## Overview
 > A Message Box
