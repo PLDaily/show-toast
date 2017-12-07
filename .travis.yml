@@ -1,0 +1,10 @@
+sudo: false
+os:
+  - linux
+  - osx
+language: node_js
+branches:
+  only:
+    - master
+node_js: 
+  - stable

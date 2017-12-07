@@ -1,0 +1,36 @@
+{
+  "name": "show-toast",
+  "version": "1.0.0",
+  "description": "A Message Box",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PLDaily/show-toast.git"
+  },
+  "author": "PLDaily <pcd12321@gmail.com> ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PLDaily/show-toast/issues"
+  },
+  "homepage": "https://github.com/PLDaily/show-toast#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "eslint": "^4.12.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "webpack": "^3.10.0"
+  }
+}
