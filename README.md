@@ -1,10 +1,10 @@
 # show-toast
 
 [![Build Status](https://travis-ci.org/PLDaily/show-toast.svg?branch=master)](https://travis-ci.org/PLDaily/show-toast)
-[![npm](https://img.shields.io/npm/v/show-toast.svg?style=plastic)](https://www.npmjs.com/package/show-toast)
-[![npm](https://img.shields.io/npm/dt/show-toast.svg?style=plastic)](https://www.npmjs.com/package/show-toast)
-[![npm](https://img.shields.io/npm/l/show-toast.svg?style=plastic)](https://www.npmjs.com/package/show-toast)
-[![npm](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=plastic)](https://github.com/standard/standard)
+[![npm](https://img.shields.io/npm/v/show-toast.svg)](https://www.npmjs.com/package/show-toast)
+[![npm](https://img.shields.io/npm/dt/show-toast.svg)](https://www.npmjs.com/package/show-toast)
+[![npm](https://img.shields.io/npm/l/show-toast.svg)](https://www.npmjs.com/package/show-toast)
+[![npm](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standard/standard)
 
 ## Overview
 > A Message Box
@@ -19,7 +19,6 @@ npm install show-toast
 
 ### Import show-toast
 
-**Import using module**
 ES6/commonjs import style is supported.
 
 ```js
@@ -29,8 +28,7 @@ import showToast from 'show-toast';
 // commonjs
 var showToast = require("show-toast");
 ```
-**Import using module**
-link as a `script` in an html file and access global variable `showToast`.
+or link as a `script` in an html file and access global variable `showToast`.
 
 ```js
 <script src="dist/show-toast.js"></script>
