@@ -65,15 +65,16 @@ let showToastObj = {
   showAlertMsgBox (params) {
     if (!this._is_load) {
       let styleArr = []
-      styleArr.push('top: 0')
+      styleArr.push('top: 5px')
       styleArr.push('left:0')
       styleArr.push('zIndex:9999999999')
-      styleArr.push('padding:5px 10px')
-      styleArr.push('minWidth:300px')
+      styleArr.push('padding:0 25px')
+      styleArr.push('minWidth:200px')
       styleArr.push('height:40px')
-      styleArr.push('lineHeight:30px')
-      styleArr.push('borderRadius:0 0 4px 4px')
-      styleArr.push('fontSize:16px')
+      styleArr.push('lineHeight:40px')
+      styleArr.push('borderRadius:4px')
+      styleArr.push('border:1px solid')
+      styleArr.push('fontSize:14px')
       styleArr.push('color:#FFF')
       styleArr.push('boxSizing:border-box')
       styleArr.push('position:fixed')
@@ -107,13 +108,13 @@ let showToastObj = {
     this.oDiv.innerHTML = params.str
 
     let left = getWindowWidth() / 2 - this.oDiv.offsetWidth / 2
-    let background = params.type === 'success' ? '#dff0d8' : '#bcdff1'
-    let border = params.type === 'success' ? '#d0e9c6' : '#bcdff1'
-    let color = params.type === 'success' ? '#3c763d' : '#31708f'
+    let background = params.type === 'success' ? '#DFF0D8' : '#BCDFF1'
+    let borderColor = params.type === 'success' ? '#ACC9AC' : '#A0CAD6'
+    let color = params.type === 'success' ? '#3C763D' : '#31708F'
 
     this.oDiv.style.left = left + 'px'
     this.oDiv.style.background = background
-    this.oDiv.style.border = border
+    this.oDiv.style.borderColor = borderColor
     this.oDiv.style.color = color
 
     this.oDiv.onmouseover = () => {

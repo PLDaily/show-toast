@@ -1,7 +1,7 @@
 {
   "name": "show-toast",
-  "version": "1.0.4",
-  "description": "A Message Box",
+  "version": "1.0.5",
+  "description": "A Toast Box",
   "main": "index.js",
   "scripts": {
     "test": "mocha",

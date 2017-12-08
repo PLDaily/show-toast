@@ -3,14 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>showToast</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: : 0;
+    }
+    .btn {
+      border-radius: 5px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 5px 10px;    
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .btn-success {
+      background: #DFF0D8;
+      color: #3c763d;
+    }
+    .btn-error {
+      background: #bcdff1;
+      color: #31708f;
+    }
+  </style>
 </head>
 <body>
+  <div class="btn btn-success" id="btn-success">显示成功信息</div>
+  <div class="btn btn-error" id="btn-error">显示错误信息</div>
   <script type="text/javascript" src="./dist/show-toast.js"></script>
   <script type="text/javascript">
     window.onload = function() {
-      showToast({
-        str: "success"
-      })
+      var oSuccessBtn = document.getElementById('btn-success');
+      var oErrorBtn = document.getElementById('btn-error');
+      oSuccessBtn.addEventListener('click', function() {
+        showToast({
+          str: "this is a success toast box",
+          type: "success",
+          time: 2000
+        })
+      }, false)
+
+      oErrorBtn.addEventListener('click', function() {
+        showToast({
+          str: "this is an error toast box",
+          type: "error",
+          time: 2000
+        })
+      }, false)
+      
     }
   </script>
 </body>

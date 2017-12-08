@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standard/standard)
 
 ## Overview
-> A Message Box
+> A Toast Box
 
 ## Install
 
@@ -38,13 +38,13 @@ or link as a `script` in an html file and access global variable `showToast`.
 
 ```js
 showToast({
-  str: 'this is a success message box'
+  str: 'this is a success toast box'
   type: 'success',
   time: 2000
 })
 
 showToast({
-  str: 'this is a error message box'
+  str: 'this is an error toast box'
   type: 'error',
   time: 2000
 })
@@ -55,9 +55,9 @@ showToast({
 
 | Option | Description                              |
 | ------ | ---------------------------------------- |
-| str    | String(default: '') message box content  |
-| type   | String(default: 'success') message box type |
-| time   | Number(defalut: 2000) message box display time |
+| str    | String(default: '') toast text content  |
+| type   | String(default: 'success') type of the toast |
+| time   | Number(defalut: 2000) time duration |
 
 ## LICENSE
 
