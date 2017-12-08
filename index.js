@@ -82,6 +82,7 @@ let showToastObj = {
 
       let temp = document.createDocumentFragment()
       this.oDiv = document.createElement('div')
+      this.oDiv.className = 'show-toast'
       for (let i = 0, l = styleArr.length; i < l; i++) {
         let key = trim(styleArr[i].split(':')[0])
         let value = trim(styleArr[i].split(':')[1])
