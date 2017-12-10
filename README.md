@@ -38,13 +38,13 @@ or link as a `script` in an html file and access global variable `showToast`.
 
 ```js
 showToast({
-  str: 'this is a success toast box'
+  str: 'this is a success toast box',
   type: 'success',
   time: 2000
 })
 
 showToast({
-  str: 'this is an error toast box'
+  str: 'this is an error toast box',
   type: 'error',
   time: 2000
 })
