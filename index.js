@@ -10,7 +10,7 @@
  * @param  {*} value value The value to check
  * @return {boolean}       Returns `true` if `value` is an object, else `false`
  */
-let isObject = (value) => {
+let isObject = value => {
   return typeof value === 'object' && !!value
 }
 
@@ -43,10 +43,10 @@ let extend = (target, ...args) => {
 /**
  * Removes leading and trailing whitespace or specified characters from `string`
  *
- * @param  {[type]} str The string to trim
- * @return {[type]}     Returns the trimmed string
+ * @param  {String} str The string to trim
+ * @return {String}     Returns the trimmed string
  */
-let trim = (str) => {
+let trim = str => {
   return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
 }
 
@@ -132,7 +132,7 @@ let showToastObj = {
   }
 }
 
-const showToast = (obj) => {
+const showToast = obj => {
   if (!isObject(obj)) {
     throw new TypeError('Expected an object')
   }
