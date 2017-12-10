@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/PLDaily/show-toast.git"
   },
+  "keywords": [
+    "toast",
+    "box"
+  ],
   "author": "PLDaily <pcd12321@gmail.com> ",
   "license": "MIT",
   "bugs": {
