@@ -9,6 +9,8 @@
 ## Overview
 > A Toast Box
 
+[demo](http://67.218.146.247:8082/example/)
+
 ## Install
 
 ### Install show-toast
@@ -55,9 +57,9 @@ showToast({
 
 | Option | Description                              |
 | ------ | ---------------------------------------- |
-| str    | String(default: '') toast text content  |
+| str    | String(default: '') toast text content   |
 | type   | String(default: 'success') type of the toast |
-| time   | Number(defalut: 2000) time duration |
+| time   | Number(defalut: 2000) time duration      |
 
 ## LICENSE
 
