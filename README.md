@@ -39,10 +39,13 @@ or link as a `script` in an html file and access global variable `showToast`.
 ## Usage
 
 ```js
+showToast('this is a success toast box')
+
 showToast({
-  str: 'this is a success toast box',
-  type: 'success',
-  time: 2000
+  str: "this is a success toast box",
+  type: "success",
+  time: 2000,
+  position: 'top'
 })
 
 showToast({
@@ -55,11 +58,12 @@ showToast({
 ## options
 
 
-| Option | Description                              |
-| ------ | ---------------------------------------- |
-| str    | String(default: '') toast text content   |
-| type   | String(default: 'success') type of the toast |
-| time   | Number(defalut: 2000) time duration      |
+| Option  | Description                                  | acceptable values       |
+| ------- | -------------------------------------------- | ----------------------- |
+| str     | String(default: '') toast text content       |                         |
+| type    | String(default: 'success') type of the toast | 'success' 'error'       |
+| time    | Number(defalut: 2000) time duration          |                         | 
+| postion | String(defalut: 'middle') toast postion      | 'top' 'middle' 'bottom' |
 
 ## LICENSE
 

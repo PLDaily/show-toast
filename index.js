@@ -10,8 +10,18 @@
  * @param  {*} value value The value to check
  * @return {boolean}       Returns `true` if `value` is an object, else `false`
  */
-let isObject = value => {
+const isObject = value => {
   return typeof value === 'object' && !!value
+}
+
+/**
+ * Checks the value is a String or not
+ *
+ * @param  {*} value value The value to check
+ * @return {boolean}       Returns `true` if `value` is a String, else `false`
+ */
+const isString = value => {
+  return Object.prototype.toString.call(value) === '[object String]'
 }
 
 /**
@@ -21,7 +31,7 @@ let isObject = value => {
  * @param  {...object} args   An object containing additional properties to merge in
  * @return {object}           Returns the merged object
  */
-let extend = (target, ...args) => {
+const extend = (target, ...args) => {
   if (!target) {
     target = {}
   }
@@ -46,27 +56,16 @@ let extend = (target, ...args) => {
  * @param  {String} str The string to trim
  * @return {String}     Returns the trimmed string
  */
-let trim = str => {
+const trim = str => {
   return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
 }
 
-/**
- * Get the screen width
- *
- * @return {number} Returns the screen width
- */
-let getWindowWidth = () => {
-  return document.compatMode === 'BackCompat' ? document.body.clientWidth : document.documentElement.clientWidth
-}
-
-let showToastObj = {
+const showToastObj = {
   _is_load: false,
   _timer: null,
   showAlertMsgBox (params) {
     if (!this._is_load) {
       let styleArr = []
-      styleArr.push('top: 5px')
-      styleArr.push('left:0')
       styleArr.push('zIndex:9999999999')
       styleArr.push('padding:0 25px')
       styleArr.push('minWidth:200px')
@@ -105,42 +104,68 @@ let showToastObj = {
       clearTimeout(this.timer)
     }
 
+    // setting show-toast content
     this.oDiv.style.display = 'block'
     this.oDiv.innerHTML = params.str
 
-    let left = getWindowWidth() / 2 - this.oDiv.offsetWidth / 2
-    let background = params.type === 'success' ? '#DFF0D8' : '#BCDFF1'
-    let borderColor = params.type === 'success' ? '#ACC9AC' : '#A0CAD6'
-    let color = params.type === 'success' ? '#3C763D' : '#31708F'
+    // setting show-toast position
+    this.oDiv.style.left = '50%'
+    this.oDiv.style.marginLeft = -(this.oDiv.offsetWidth / 2) + 'px'
+    if (params.position === 'top') {
+      this.oDiv.style.top = '50px'
+      this.oDiv.style.bottom = 'auto'
+      this.oDiv.style.marginTop = 'auto'
+    } else if (params.position === 'bottom') {
+      this.oDiv.style.bottom = '50px'
+      this.oDiv.style.top = 'auto'
+      this.oDiv.style.marginTop = 'auto'
+    } else {
+      this.oDiv.style.top = '50%'
+      this.oDiv.style.bottom = 'auto'
+      this.oDiv.style.marginTop = -(this.oDiv.offsetHeight / 2) + 'px'
+    }
 
-    this.oDiv.style.left = left + 'px'
+    // setting show-toast style
+    const background = params.type === 'success' ? '#DFF0D8' : '#BCDFF1'
+    const borderColor = params.type === 'success' ? '#ACC9AC' : '#A0CAD6'
+    const color = params.type === 'success' ? '#3C763D' : '#31708F'
     this.oDiv.style.background = background
     this.oDiv.style.borderColor = borderColor
     this.oDiv.style.color = color
 
+    // deal mouse event
     this.oDiv.onmouseover = () => {
       clearTimeout(this.timer)
     }
     this.oDiv.onmouseout = () => {
       this.timer = setTimeout(() => {
         this.oDiv.style.display = 'none'
-      }, params.time ? params.time : 2000)
+      }, params.time)
     }
     this.timer = setTimeout(() => {
       this.oDiv.style.display = 'none'
-    }, params.time ? params.time : 2000)
+    }, params.time)
   }
 }
 
-const showToast = obj => {
-  if (!isObject(obj)) {
-    throw new TypeError('Expected an object')
+const showToast = value => {
+  let obj = {}
+  if (!isObject(value)) {
+    if (isString(value)) {
+      obj = {
+        str: value
+      }
+    } else {
+      throw new TypeError('Expected an object or a String')
+    }
+  } else {
+    obj = value
   }
-
-  let target = {
+  const target = {
     str: 'success',
+    time: 2000,
     type: 'success',
-    time: 2000
+    position: 'middle'
   }
 
   obj = extend(target, obj)

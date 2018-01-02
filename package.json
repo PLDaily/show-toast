@@ -1,6 +1,6 @@
 {
   "name": "show-toast",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Toast Box",
   "main": "index.js",
   "scripts": {
