@@ -67,16 +67,17 @@ const showToastObj = {
     if (!this._is_load) {
       let styleArr = []
       styleArr.push('zIndex:9999999999')
-      styleArr.push('padding:0 25px')
+      styleArr.push('padding:12px')
       styleArr.push('minWidth:200px')
-      styleArr.push('height:40px')
-      styleArr.push('lineHeight:40px')
-      styleArr.push('borderRadius:4px')
-      styleArr.push('border:1px solid')
-      styleArr.push('fontSize:14px')
+      styleArr.push('borderRadius:5px')
+      styleArr.push('lineHeight:1.2')
+      styleArr.push('fontSize:12px')
       styleArr.push('color:#FFF')
       styleArr.push('boxSizing:border-box')
+      styleArr.push('backgroundColor:rgba(39, 39, 39, 0.7)')
       styleArr.push('position:fixed')
+      styleArr.push('left:50%')
+      styleArr.push('transform:translateX(-50%)')
       styleArr.push('textAlign:center')
 
       let temp = document.createDocumentFragment()
@@ -109,29 +110,19 @@ const showToastObj = {
     this.oDiv.innerHTML = params.str
 
     // setting show-toast position
-    this.oDiv.style.left = '50%'
-    this.oDiv.style.marginLeft = -(this.oDiv.offsetWidth / 2) + 'px'
     if (params.position === 'top') {
       this.oDiv.style.top = '50px'
       this.oDiv.style.bottom = 'auto'
-      this.oDiv.style.marginTop = 'auto'
+      this.oDiv.style.transform = 'translate(-50%, 0)'
     } else if (params.position === 'bottom') {
       this.oDiv.style.bottom = '50px'
       this.oDiv.style.top = 'auto'
-      this.oDiv.style.marginTop = 'auto'
+      this.oDiv.style.transform = 'translate(-50%, 0)'
     } else {
       this.oDiv.style.top = '50%'
       this.oDiv.style.bottom = 'auto'
-      this.oDiv.style.marginTop = -(this.oDiv.offsetHeight / 2) + 'px'
+      this.oDiv.style.transform = 'translate(-50%, -50%)'
     }
-
-    // setting show-toast style
-    const background = params.type === 'success' ? '#DFF0D8' : '#BCDFF1'
-    const borderColor = params.type === 'success' ? '#ACC9AC' : '#A0CAD6'
-    const color = params.type === 'success' ? '#3C763D' : '#31708F'
-    this.oDiv.style.background = background
-    this.oDiv.style.borderColor = borderColor
-    this.oDiv.style.color = color
 
     // deal mouse event
     this.oDiv.onmouseover = () => {
@@ -164,7 +155,6 @@ const showToast = value => {
   const target = {
     str: 'success',
     time: 2000,
-    type: 'success',
     position: 'middle'
   }
 
