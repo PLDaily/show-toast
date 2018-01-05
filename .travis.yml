@@ -1,3 +1,13 @@
 language: node_js
-node_js: 
-  - 'stable'
+node_js:
+- 'stable'
+- 8
+branches:
+  only:
+  - master
+before_install:
+- npm install mocha-phantomjs -g
+install:
+- npm install
+script:
+- npm test
