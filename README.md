@@ -4,6 +4,7 @@
 [![npm](https://img.shields.io/npm/v/show-toast.svg)](https://www.npmjs.com/package/show-toast)
 [![npm](https://img.shields.io/npm/dt/show-toast.svg)](https://www.npmjs.com/package/show-toast)
 [![npm](https://img.shields.io/npm/l/show-toast.svg)](https://www.npmjs.com/package/show-toast)
+[![Coverage Status](https://coveralls.io/repos/github/PLDaily/show-toast/badge.svg?branch=master)](https://coveralls.io/github/PLDaily/show-toast?branch=master)
 [![npm](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standard/standard)
 
 ## Overview
