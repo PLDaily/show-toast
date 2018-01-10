@@ -40,7 +40,8 @@ module.exports = function(config) {
       'karma-sourcemap-loader',
       'karma-coverage',
       'karma-mocha',
-      'karma-chai'
+      'karma-chai',
+      'karma-coveralls'
     ],
   })
 }
