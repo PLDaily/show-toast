@@ -38,7 +38,7 @@ const extend = (target, ...args) => {
   if (args.length === 0) {
     return target
   }
-  for (let obj of Object.values(args)) {
+  for (let obj of args) {
     for (let name in obj) {
       if (isObject(obj[name])) {
         target[name] = extend(target[name], obj[name])
