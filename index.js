@@ -32,19 +32,9 @@ const isString = value => {
  * @return {object}           Returns the merged object
  */
 const extend = (target, ...args) => {
-  if (!target) {
-    target = {}
-  }
-  if (args.length === 0) {
-    return target
-  }
   for (let obj of args) {
     for (let name in obj) {
-      if (isObject(obj[name])) {
-        target[name] = extend(target[name], obj[name])
-      } else {
-        target[name] = obj[name]
-      }
+      target[name] = obj[name]
     }
   }
   return target
@@ -62,7 +52,6 @@ const trim = str => {
 
 const showToastObj = {
   _is_load: false,
-  _timer: null,
   showAlertMsgBox (params) {
     if (!this._is_load) {
       let styleArr = []
@@ -89,11 +78,8 @@ const showToastObj = {
         this.oDiv.style[key] = value
       }
       temp.appendChild(this.oDiv)
-      if (document.compatMode === 'BackCompat') {
-        document.body.appendChild(temp)
-      } else {
-        document.documentElement.appendChild(temp)
-      }
+      document.body.appendChild(temp)
+
       this._is_load = true
       this.doEvent(params)
     } else {
@@ -104,6 +90,12 @@ const showToastObj = {
     if (this.timer) {
       clearTimeout(this.timer)
     }
+
+    this.timer = setTimeout(() => {
+      this.oDiv.style.display = 'none'
+      clearTimeout(this.timer)
+      this.timer = null
+    }, params.time)
 
     // setting show-toast content
     this.oDiv.style.display = 'block'
@@ -123,19 +115,6 @@ const showToastObj = {
       this.oDiv.style.bottom = 'auto'
       this.oDiv.style.transform = 'translate(-50%, -50%)'
     }
-
-    // deal mouse event
-    this.oDiv.onmouseover = () => {
-      clearTimeout(this.timer)
-    }
-    this.oDiv.onmouseout = () => {
-      this.timer = setTimeout(() => {
-        this.oDiv.style.display = 'none'
-      }, params.time)
-    }
-    this.timer = setTimeout(() => {
-      this.oDiv.style.display = 'none'
-    }, params.time)
   }
 }
 

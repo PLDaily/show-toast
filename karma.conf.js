@@ -43,7 +43,6 @@ module.exports = function(config) {
     plugins: [
       'karma-webpack',
       'karma-phantomjs-launcher',
-      'karma-sourcemap-loader',
       'karma-coverage',
       'karma-mocha',
       'karma-chai',
